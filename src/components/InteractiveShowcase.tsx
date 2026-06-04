@@ -270,9 +270,6 @@ export default function InteractiveShowcase() {
                   transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
                 >
                   <div className="flex items-center gap-2 overflow-x-auto border-b border-black/5 bg-[#f5f5f7]/80 px-3 py-1.5 backdrop-blur-xl sm:gap-4 sm:px-5 sm:py-2">
-                    <span className="shrink-0 text-[10px] font-semibold text-[#1d1d1f] sm:text-xs">
-                      
-                    </span>
                     <span className="shrink-0 text-[10px] font-medium text-[#86868b] sm:text-xs">
                       File
                     </span>
