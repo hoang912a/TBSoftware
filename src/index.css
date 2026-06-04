@@ -1,0 +1,189 @@
+@import "tailwindcss";
+
+/* ===== Tailwind v4 Theme ===== */
+@theme {
+    --font-sans:
+        "Inter", "SF Pro Display", "SF Pro Text", system-ui, -apple-system,
+        sans-serif;
+    --color-apple-blue: #0071e3;
+    --color-apple-blue-hover: #0077ed;
+    --color-apple-gray: #f5f5f7;
+    --color-apple-gray-text: #86868b;
+    --color-apple-dark: #1d1d1f;
+    --color-apple-green: #34c759;
+    --color-apple-orange: #ff9500;
+    --color-apple-purple: #af52de;
+}
+
+/* ===== Base ===== */
+html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: var(--font-sans);
+    background: #ffffff;
+    color: #1d1d1f;
+    overflow-x: hidden;
+    min-height: 100svh;
+}
+
+::selection {
+    background: rgba(0, 113, 227, 0.2);
+    color: #1d1d1f;
+}
+
+/* ===== Scrollbar ===== */
+::-webkit-scrollbar {
+    width: 4px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: #d2d2d7;
+    border-radius: 2px;
+}
+
+/* ===== Marquee Animation ===== */
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+.animate-marquee {
+    animation: marquee 30s linear infinite;
+    will-change: transform;
+}
+
+/* ===== Glass Effect ===== */
+.glass {
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    background: rgba(255, 255, 255, 0.72);
+}
+
+/* ===== Gradient Text ===== */
+.text-gradient {
+    background: linear-gradient(135deg, #0071e3 0%, #af52de 50%, #ff9500 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ===== Unlock Slider ===== */
+.unlock-track {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* ===== Card Hover ===== */
+.card-hover {
+    transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+.card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.08),
+        0 8px 16px rgba(0, 0, 0, 0.04);
+}
+
+/* ===== Soft Shadows ===== */
+.shadow-soft {
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.04),
+        0 8px 24px rgba(0, 0, 0, 0.06);
+}
+.shadow-soft-lg {
+    box-shadow:
+        0 4px 16px rgba(0, 0, 0, 0.04),
+        0 16px 48px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== macOS Window ===== */
+.mac-window {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(40px) saturate(180%);
+    -webkit-backdrop-filter: blur(40px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow:
+        0 25px 80px rgba(0, 0, 0, 0.12),
+        0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+/* ===== Dock Item ===== */
+.dock-item {
+    transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+    -webkit-tap-highlight-color: transparent;
+}
+.dock-item:hover {
+    transform: scale(1.15) translateY(-6px);
+}
+
+/* ===== Badge ===== */
+.badge-apple {
+    display: inline-block;
+    background: rgba(0, 113, 227, 0.06);
+    color: #0071e3;
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: -0.08px;
+    line-height: 1.4;
+}
+
+/* ===== Form Input ===== */
+.input-apple {
+    display: block;
+    width: 100%;
+    background: #f5f5f7;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    padding: 12px 16px;
+    font-size: 15px;
+    font-family: var(--font-sans);
+    color: #1d1d1f;
+    transition: all 0.2s ease;
+    outline: none;
+    -webkit-appearance: none;
+}
+.input-apple:focus {
+    background: #ffffff;
+    border-color: #0071e3;
+    box-shadow: 0 0 0 4px rgba(0, 113, 227, 0.1);
+}
+.input-apple::placeholder {
+    color: #86868b;
+}
+
+/* ===== Counter ===== */
+.counter-number {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum";
+}
+
+/* ===== Responsive fixes ===== */
+@media (max-width: 640px) {
+    .mac-window {
+        border-radius: 16px;
+    }
+    .dock-item:hover {
+        transform: scale(1.08) translateY(-2px);
+    }
+}
+
+/* Prevent iOS zoom on inputs */
+@media screen and (max-width: 767px) {
+    .input-apple {
+        font-size: 16px;
+    }
+}
