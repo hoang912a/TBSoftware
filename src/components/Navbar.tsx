@@ -39,7 +39,11 @@ export default function Navbar() {
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-14 items-center justify-between sm:h-16">
           <a href="#" className="flex items-center gap-2 shrink-0">
-            <img src="/Logo.png" alt="TBsoft" className="h-12 w-auto sm:h-16" />
+            <img
+              src={`${import.meta.env.BASE_URL}Logo.png`}
+              alt="TBsoft"
+              className="h-12 w-auto sm:h-16"
+            />
           </a>
 
           {/* Desktop nav */}

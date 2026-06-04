@@ -14,7 +14,11 @@ export default function Footer() {
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-2">
             <a href="#" className="flex items-center gap-2">
-              <img src="/Logo.png" alt="Cty" className="h-12 w-auto sm:h-16" />
+              <img
+                src={`${import.meta.env.BASE_URL}Logo.png`}
+                alt="TBsoft"
+                className="h-12 w-auto sm:h-16"
+              />
             </a>
             <p className="mt-3 max-w-xs text-[13px] leading-relaxed text-[#86868b] sm:mt-4 sm:text-sm">
               Phát triển phần mềm theo yêu cầu cho doanh nghiệp. Giải pháp công
